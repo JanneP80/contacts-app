@@ -11,14 +11,6 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <script type="text/javascript" src="libs/lodash.js"></script>
-
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="contact.js"></script>
-    <script type="text/javascript" src="contact-store.js"></script>
-    <script type="text/javascript" src="contact-table-helper.js"></script>
-    <script type="text/javascript" src="utils.js"></script>
-
 </head>
 <body>
 <div class="ca-container">
@@ -72,26 +64,11 @@
 <script>
 
     function saveContact() {
-        contactsApp.contactStore.saveContact(buildContactFromInput());
-        var saved = contactsApp.contactStore.loadContacts();
-        contactsApp.contactTableHelper.rebuildTableWithContacts(
-            document.getElementById('contactTable'),
-            saved);
     }
 
     function buildContactFromInput() {
-        return contactsApp.contact(
-            document.getElementById('firstName').value,
-            document.getElementById('lastName').value,
-            document.getElementById('phone').value,
-            document.getElementById('streetAddress').value,
-            document.getElementById('city').value
-        );
     }
 
-    contactsApp.contactTableHelper.rebuildTableWithContacts(
-        document.getElementById('contactTable'),
-        contactsApp.contactStore.loadContacts());
 
 </script>
 </html>
